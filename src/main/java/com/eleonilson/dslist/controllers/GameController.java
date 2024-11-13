@@ -11,7 +11,7 @@ import com.eleonilson.dslist.dto.GameMinDTO;
 import com.eleonilson.dslist.services.GameService;
 
 @RestController
-@RequestMapping("/games")
+@RequestMapping(value = "/games")
 public class GameController {
 		
 		@Autowired
