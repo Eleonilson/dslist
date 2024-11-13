@@ -1,14 +1,16 @@
 package com.eleonilson.dslist.dto;
 
 import com.eleonilson.dslist.entities.Game;
+import com.eleonilson.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
+
 	private Long id;
 	private String title;
 	private Integer year;
 	private String imgUrl;
 	private String shortDescription;
-	
+
 	public GameMinDTO(Game entity) {
 		id = entity.getId();
 		title = entity.getTitle();
@@ -17,6 +19,13 @@ public class GameMinDTO {
 		shortDescription = entity.getShortDescription();
 	}
 
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
+	}
 	public Long getId() {
 		return id;
 	}
@@ -36,5 +45,4 @@ public class GameMinDTO {
 	public String getShortDescription() {
 		return shortDescription;
 	}
-	
 }
